@@ -1,0 +1,13 @@
+---
+language: ruby
+sudo: required
+services:
+  - docker
+script:
+  - bundle exec rspec spec/acceptance
+matrix:
+  include:
+  - rvm: default
+    env: BEAKER_set="debian-8-x86_64_docker"
+  - rvm: default
+    env: BEAKER_set="centos-7-x86_64_docker"
